@@ -18,15 +18,18 @@ the next time of node inserting will cause auto-increment on its node array.
 
 以默认节点数组大小(`LeastNodeCount`, 256)创建创建`RBTree32`, 当节点数组大小等于节点个数的时候, 下一次添加节点的时候将会触发节点数组的自增.
 
+
 `RBTree* RBTree64Create()`
 Create `RBTree64` with the default node array size(LeastNodeCount, 256)
 
 以默认节点数组大小(`LeastNodeCount`, 256)创建创建`RBTree64` 
 
+
 `RBTree* RBTree32CreateSize(long long unsigned int size)`
 Create `RBTree32` with the specific `size`, if `size==0`, then the node array size if 1.
 
 以指定节点数组大小创建`RBTree32`,  如果`size==0`, 则节点数组大小为1
+
 
 `RBTree* RBTree64CreateSize(long long unsigned int size)`
 Create `RBTree64` with the specific `size`, if `size==0`, then the node array size if 1.
@@ -72,6 +75,7 @@ Clear a `RBTree32` or `RBTree64`, this will not change its memory usage.
 
 清除`RBTree32`或者`RBTree64` , 不会改变红黑树的内存占用
 
+
 `bool RBTreeDestroy(RBTree** treePointer)`
 Destroy a `RBTree32` or `RBTree64`, this will release its memory usage and set `*(treePointer)` to `NULL`
 
@@ -83,15 +87,18 @@ Return the number of key, value in a `RBTree32` or `RBTree64`.
 
 返回`RBTree32`或者`RBTree64`的key, value对的个数
 
+
 `void RBTreeGetMax(const RBTree* tree,long long unsigned int* key,long long unsigned int* value)`
 Get the value of the maximal key in `RBTree32` or `RBTree64`, its value will save to `*(value)`
 
 获取最大的`key`的值, 写入`*(value)`
 
+
 `void RBTreeGetMin(const RBTree* tree,long long unsigned int* key,long long unsigned int* value)`
 Get the value of the minimal key in `RBTree32` or `RBTree64`, its value will save to `*(value)`
 
 获取最小的`key`的值, 写入`*(value) `
+
 
 `bool RBTreeMemoryShrink(RBTree** treePointer)`
 Shirk the memory usage of `RBTree32` or `RBTree64`.
