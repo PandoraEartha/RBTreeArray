@@ -124,7 +124,7 @@ Test on 13490F, 128GiB memory WSL2 Ubuntu, gcc `-O2`
 
 ## Big Data
 
-For a $$\testtt{1<<21}=2097152$$ nodes tree, 
+For a $$\texttt{1<<21}=2097152$$ nodes tree, 
 
 `RBTree32` is 2.8027 times faster than `std::map<unsigned,unsigned>` on insert
 
@@ -140,7 +140,7 @@ For a $$\testtt{1<<21}=2097152$$ nodes tree,
 
 ![image](https://github.com/user-attachments/assets/984cc836-dc4b-44e6-9d42-4bfb3950d2e5)
 
-For a $$\testtt{1<<26}=67108864$$ nodes tree, 
+For a $$\texttt{1<<26}=67108864$$ nodes tree, 
 
 ## Small Data
 
