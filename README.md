@@ -1,3 +1,5 @@
+[中文介绍](https://zhuanlan.zhihu.com/p/22771077844)
+
 # RBTreeArray
 Red black tree C implementation, tree and nodes are in a continuous memory region thus you can write the RBTree into file/share_memory or read from file/share_memory.
 
@@ -116,4 +118,38 @@ Shirk the memory usage of `RBTree32` or `RBTree64`.
 
 缩小`RBTree32`或者`RBTree64`的内存占用.
 
+# Speed
 
+Test on 13490F, 128GiB memory WSL2 Ubuntu, gcc `-O2`
+
+## Big Data
+
+For a $$\testtt{1<<21}=2097152$$ nodes tree, 
+
+`RBTree32` is 2.8027 times faster than `std::map<unsigned,unsigned>` on insert
+
+`RBTree32` is 4.3488 times faster than `std::map<unsigned,unsigned>` on search
+
+`RBTree32` is 9.2720 times faster than `std::map<unsigned,unsigned>` on delete
+
+`RBTree64` is 0.8748 times slower than `std::map<long long unsigned int,long long unsigned int>` on insert
+
+`RBTree64` is 1.7265 times faster than `std::map<long long unsigned int,long long unsigned int>` on search
+
+`RBTree64` is 1.4852 times faster than `std::map<long long unsigned int,long long unsigned int>` on delete
+
+![image](https://github.com/user-attachments/assets/984cc836-dc4b-44e6-9d42-4bfb3950d2e5)
+
+For a $$\testtt{1<<26}=67108864$$ nodes tree, 
+
+## Small Data
+
+For a $$10000$$ nodes tree, 
+
+`RBTree32` is 0.9164 times slower than `std::map<unsigned,unsigned>` on insert
+
+`RBTree32` is 1.1753 times faster than `std::map<unsigned,unsigned>` on search
+
+`RBTree32` is 1.1500 times faster than `std::map<unsigned,unsigned>` on delete
+
+![image](https://github.com/user-attachments/assets/fa4d8cfa-8731-4ad6-b47c-de54a2acdc6b)
